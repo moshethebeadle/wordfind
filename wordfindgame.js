@@ -44,7 +44,9 @@
     };
 
     var getWords = function () {
-      return $('input.word').toArray().map(wordEl => wordEl.value.toLowerCase()).filter(word => word);
+      const wordsArray = $('textarea').val().trim().split(/\s+/);
+      console.log('words', wordsArray);
+      return wordsArray;
     };
 
     /**

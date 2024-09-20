@@ -93,12 +93,14 @@ button::-moz-focus-inner {
 /**
 * Styles for the word list
 */
-#words {
+textarea#words {
   display: inline-block;
   max-width: 30rem;
   padding: 1em;
   list-style-type: none;
   text-align: left;
+  height: 300px;
+  width: 200px;
 }
 @media only screen and (min-width: 600px) {
   #words {
@@ -107,11 +109,6 @@ button::-moz-focus-inner {
     column-count: 2;
     column-gap: 20px;
   }
-}
-
-#words li {
-  padding: 3px 0;
-  font: 1em sans-serif;
 }
 
 /* indicates that the word has been found */

@@ -11,22 +11,30 @@
     <h1>WordFind.js by BunKat &amp; Lucas-C</h1>
     <div id="main" role="main">
         <div id="puzzle"></div>
-        <ul id="words">
-            <li><button id="add-word">Add word</button></li>
-        </ul>
+        <textarea id="words">
+            Hope
+            Faith
+            Charity
+            Love
+            Patience
+            Temperance
+            Humility
+            Prayer
+            Repentance
+        </textarea>
         <fieldset id="controls">
             <label for="allowed-missing-words">Allowed missing words :
                 <input id="allowed-missing-words" type="number" min="0" max="5" step="1" value="2">
             </label>
             <label for="max-grid-growth">Max grid growth :
-                <input id="max-grid-growth" type="number" min="0" max="5" step="1" value="0">
+                <input id="max-grid-growth" type="number" min="0" max="5" step="1" value="3">
             </label>
             <label for="extra-letters">Extra letters :
                 <select id="extra-letters">
-                    <option value="secret-word" selected>form a secret word</option>
+                    <option value="secret-word">form a secret word</option>
                     <option value="none">none, allow blanks</option>
                     <option value="secret-word-plus-blanks">form a secret word but allow for extra blanks</option>
-                    <option value="random">random</option>
+                    <option value="random" selected>random</option>
                 </select>
             </label>
             <label for="secret-word">Secret word :
@@ -66,7 +74,7 @@
         'sexy',
         'tendre',
     ].map(word => WordFindGame.insertWordBefore($('#add-word').parent(), word));
-    $('#secret-word').val('LAETITIA');
+    // $('#secret-word').val('LAETITIA');
 
     /* Init */
     function recreate() {
