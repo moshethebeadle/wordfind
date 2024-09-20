@@ -22,6 +22,7 @@
             Prayer
             Repentance
         </textarea>
+        <button id="copy">Copy Puzzle</button>
         <fieldset id="controls">
             <label for="allowed-missing-words">Allowed missing words :
                 <input id="allowed-missing-words" type="number" min="0" max="5" step="1" value="2">
@@ -114,6 +115,23 @@
     $('#create-grid').click(recreate);
 
     $('#solve').click(() => game.solve());
+
+    $('#copy').click(() => {
+        const rawPuzzle = $('#puzzle').text();
+        const side = Math.sqrt(rawPuzzle.length);
+        let puzzle = "";
+        for(let i = 0; i < rawPuzzle.length; i++) {
+            if (i % side === 0) {
+                puzzle += "\n";
+            }
+            puzzle += ' ';
+            puzzle += rawPuzzle[i].toUpperCase();
+        }
+        console.log(side);
+        console.log(puzzle);
+        // copy(puzzle);
+        navigator.clipboard.writeText(puzzle);
+    });
     </script>
 </body>
 </html>
