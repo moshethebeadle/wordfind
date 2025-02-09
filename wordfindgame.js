@@ -44,9 +44,11 @@
     };
 
     var getWords = function () {
-      const wordsArray = $('textarea').val().trim().split(/\s+/);
+      const wordsArray = $('textarea').val().trim().split(/\n+/);
       console.log('words', wordsArray);
-      return wordsArray;
+      const wordsClean = wordsArray.map(w => w.replaceAll(/\s+/g, ''));
+      console.log('words clean', wordsClean);
+      return wordsClean;
     };
 
     /**
